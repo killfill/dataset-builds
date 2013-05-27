@@ -1,0 +1,32 @@
+--- /data/owncloud/core/templates/installation.php.orig	2013-05-26 03:29:20.583428962 +0000
++++ /data/owncloud/core/templates/installation.php	2013-05-26 04:07:20.561211105 +0000
+@@ -91,7 +91,7 @@
+ 		<input type="hidden" id="dbtype" name="dbtype" value="mysql" />
+ 		<?php else: ?>
+ 		<input type="radio" name="dbtype" value="mysql" id="mysql"
+-			<?php OC_Helper::init_radio('dbtype', 'mysql', 'sqlite'); ?>/>
++			<?php OC_Helper::init_radio('dbtype', 'mysql', 'mysql'); ?>/>
+ 		<label class="mysql" for="mysql">MySQL</label>
+ 		<?php endif; ?>
+ 		<?php endif; ?>
+@@ -135,17 +135,17 @@
+ 			<p class="infield grouptop">
+ 				<label for="dbuser" class="infield"><?php p($l->t( 'Database user' )); ?></label>
+ 				<input type="text" name="dbuser" id="dbuser" placeholder=""
+-					value="<?php p(OC_Helper::init_var('dbuser')); ?>" autocomplete="off" />
++					value="<?php p(OC_Helper::init_var('dbuser', 'owncloud')); ?>" autocomplete="off" />
+ 			</p>
+ 			<p class="infield groupmiddle">
+ 				<label for="dbpass" class="infield"><?php p($l->t( 'Database password' )); ?></label>
+ 				<input type="password" name="dbpass" id="dbpass" placeholder=""
+-					value="<?php p(OC_Helper::init_var('dbpass')); ?>" />
++					value="<?php p(OC_Helper::init_var('dbpass', 'owncloud')); ?>" />
+ 			</p>
+ 			<p class="infield groupmiddle">
+ 				<label for="dbname" class="infield"><?php p($l->t( 'Database name' )); ?></label>
+ 				<input type="text" name="dbname" id="dbname" placeholder=""
+-					value="<?php p(OC_Helper::init_var('dbname')); ?>"
++					value="<?php p(OC_Helper::init_var('dbname', 'owncloud')); ?>"
+ 					autocomplete="off" pattern="[0-9a-zA-Z$_-]+" />
+ 			</p>
+ 		</div>
